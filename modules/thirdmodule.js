@@ -1,14 +1,14 @@
-var returnRandom = require('./returnrandom.js');
-var convertDollar = require('./convert.js');
+var Random = require('./random.js');
+var Convert = require('./convert.js');
 
-var Pretty = {
-  foo: convertDollar(returnRandom(100, 1000000)),
-  poo: 'Account Balance: \n',
+var Balance = {
+  money: Convert.func(Random.func(100, 1000000)),
+  words: 'Account Balance: \n',
 };
 
 // module.exports = convertDollar(returnRandom.returnRand(100, 1000000));
 // module.exports = 'Account Balance: \n';
-module.exports = Pretty;
+module.exports = Balance;
 
 //var pretty is an object.
 //convertDollar is a function that takes in the result of the random# generator

@@ -1,8 +1,8 @@
 var express = require('express');
 var path = require('path');
-var ranNum = require('./modules/returnrandom.js');
-var convert = require('./modules/convert.js');
-var thirdModule = require('./modules/thirdmodule.js');
+var Random = require('./modules/random.js');
+var Convert = require('./modules/convert.js');
+var Format = require('./modules/format.js');
 
 var app = express();
 
@@ -21,7 +21,7 @@ app.get('/static', function(requ, res, next) {
 });
 
 app.get('/balance', function(req, res, next) {
-  res.send(thirdModule.poo + thirdModule.foo);
+  res.send(Format.func(Convert.func(Random.func(100, 1000000))));
 });
 
 var server = app.listen(3000, function() {
